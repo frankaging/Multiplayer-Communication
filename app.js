@@ -46,7 +46,7 @@ try {
       io          = require('socket.io')(server);
 } catch (err) {
   console.log("cannot find SSL certificates; falling back to http");
-  var server      = app.listen(gameport),
+  var server      = app.listen(process.env.PORT || gameport),
       io          = require('socket.io')(server);
 }
 
