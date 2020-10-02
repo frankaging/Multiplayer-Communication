@@ -28,6 +28,8 @@ if(argv.gameport) {
   console.log('no gameport specified: using 8888\nUse the --gameport flag to change');
 }
 
+// This hard-code is needed for deploying on Heroku
+argv.expname = "multiplayers"
 if(argv.expname) {
   var exp = argv.expname.replace(/\/$/, "");
   var gameServer = new Server(exp);  
